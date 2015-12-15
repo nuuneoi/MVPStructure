@@ -86,7 +86,7 @@ public class MainListFragment extends Fragment implements IMainListFragmentView 
     }
 
     @Override
-    public void onLoadFinished(boolean success, DessertItemCollectionDao dao) {
+    public void showDessertList(boolean success, DessertItemCollectionDao dao) {
         if (success) {
             mainListPresenter.setData(dao);
             Toast.makeText(Contextor.getInstance().getContext(), "Loaded", Toast.LENGTH_SHORT).show();

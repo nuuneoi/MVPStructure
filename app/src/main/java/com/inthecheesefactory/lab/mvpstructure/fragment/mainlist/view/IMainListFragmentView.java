@@ -7,6 +7,6 @@ import com.inthecheesefactory.lab.mvpstructure.dao.DessertItemCollectionDao;
  */
 public interface IMainListFragmentView {
 
-    void onLoadFinished(boolean success, DessertItemCollectionDao dao);
+    void showDessertList(boolean success, DessertItemCollectionDao dao);
 
 }

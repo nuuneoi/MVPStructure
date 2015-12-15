@@ -45,7 +45,7 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ViewHo
     }
 
     @Override
-    public void setData(DessertItemCollectionDao dao) {
+    public void showDessertList(DessertItemCollectionDao dao) {
         this.dao = dao;
         notifyDataSetChanged();
     }

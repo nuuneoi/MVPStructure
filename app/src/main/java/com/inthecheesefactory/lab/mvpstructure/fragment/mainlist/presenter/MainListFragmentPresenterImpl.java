@@ -38,7 +38,7 @@ public class MainListFragmentPresenterImpl implements IMainListFragmentPresenter
 
     @Override
     public void onLoadFinished(boolean success, DessertItemCollectionDao dao) {
-        mainListFragmentView.onLoadFinished(success, dao);
+        mainListFragmentView.showDessertList(success, dao);
     }
 
 }

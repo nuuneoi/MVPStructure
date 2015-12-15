@@ -1,13 +1,10 @@
 package com.inthecheesefactory.lab.mvpstructure.fragment.mainlist.adapter.presenter;
 
 import android.os.Bundle;
-import android.os.Parcel;
 import android.support.annotation.NonNull;
 
 import com.inthecheesefactory.lab.mvpstructure.dao.DessertItemCollectionDao;
-import com.inthecheesefactory.lab.mvpstructure.fragment.mainlist.adapter.presenter.IMainListAdapterPresenter;
 import com.inthecheesefactory.lab.mvpstructure.fragment.mainlist.adapter.view.IMainListAdapterView;
-import com.inthecheesefactory.lab.mvpstructure.fragment.mainlist.view.IMainListFragmentView;
 
 import org.parceler.Parcels;
 
@@ -37,6 +34,6 @@ public class MainListAdapterPresenterImpl implements IMainListAdapterPresenter {
     @Override
     public void setData(DessertItemCollectionDao dao) {
         this.dao = dao;
-        mainListAdapterView.setData(dao);
+        mainListAdapterView.showDessertList(dao);
     }
 }

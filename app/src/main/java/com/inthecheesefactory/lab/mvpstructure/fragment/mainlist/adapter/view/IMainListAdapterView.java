@@ -7,6 +7,6 @@ import com.inthecheesefactory.lab.mvpstructure.dao.DessertItemCollectionDao;
  */
 public interface IMainListAdapterView {
 
-    public void setData(DessertItemCollectionDao dao);
+    public void showDessertList(DessertItemCollectionDao dao);
 
 }
