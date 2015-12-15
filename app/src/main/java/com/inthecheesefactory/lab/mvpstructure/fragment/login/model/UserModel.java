@@ -1,4 +1,4 @@
-package com.inthecheesefactory.lab.mvpstructure.activity.model;
+package com.inthecheesefactory.lab.mvpstructure.fragment.login.model;
 
 import org.parceler.Parcel;
 
