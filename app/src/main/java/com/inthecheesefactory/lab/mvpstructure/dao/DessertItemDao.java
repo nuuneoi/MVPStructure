@@ -13,15 +13,15 @@ import java.util.List;
 @Parcel
 public class DessertItemDao {
 
-    @SerializedName("menu_id")       private int menuId;
-    @SerializedName("name")          private String name;
-    @SerializedName("description")   private String description;
-    @SerializedName("image_url")     private String imageUrl;
-    @SerializedName("prep_time")     private int prepTime;
-    @SerializedName("ready_in_time") private int readyInTime;
-    @SerializedName("timestamp")     private Date timestamp;
-    @SerializedName("ingredients")   private List<String> ingredients;
-    @SerializedName("directions")    private List<String> directions;
+    @SerializedName("menu_id")       int menuId;
+    @SerializedName("name")          String name;
+    @SerializedName("description")   String description;
+    @SerializedName("image_url")     String imageUrl;
+    @SerializedName("prep_time")     int prepTime;
+    @SerializedName("ready_in_time") int readyInTime;
+    @SerializedName("timestamp")     Date timestamp;
+    @SerializedName("ingredients")   List<String> ingredients;
+    @SerializedName("directions")    List<String> directions;
 
     public int getMenuId() {
         return menuId;

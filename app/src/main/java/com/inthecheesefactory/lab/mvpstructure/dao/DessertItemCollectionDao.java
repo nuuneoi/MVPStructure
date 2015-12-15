@@ -12,8 +12,8 @@ import java.util.List;
 @Parcel
 public class DessertItemCollectionDao {
 
-    @SerializedName("success") private boolean success;
-    @SerializedName("data")    private List<DessertItemDao> data;
+    @SerializedName("success") boolean success;
+    @SerializedName("data")    List<DessertItemDao> data;
 
     public boolean isSuccess() {
         return success;
