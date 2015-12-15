@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initInstances();
-
         presenter = new MainPresenterImpl(this, new MainInteractorImpl());
+
+        initInstances();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()

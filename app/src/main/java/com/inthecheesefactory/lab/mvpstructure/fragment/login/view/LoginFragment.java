@@ -1,5 +1,6 @@
 package com.inthecheesefactory.lab.mvpstructure.fragment.login.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.inthecheesefactory.lab.mvpstructure.R;
+import com.inthecheesefactory.lab.mvpstructure.activity.mainlist.view.MainListActivity;
 import com.inthecheesefactory.lab.mvpstructure.fragment.login.interactor.LoginFragmentInteractorImpl;
 import com.inthecheesefactory.lab.mvpstructure.fragment.login.presenter.ILoginFragmentPresenter;
 import com.inthecheesefactory.lab.mvpstructure.fragment.login.presenter.LoginFragmentPresenterImpl;
@@ -53,6 +55,7 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
 
     private void initInstances(View rootView) {
         ButterKnife.bind(this, rootView);
+
         presenter = new LoginFragmentPresenterImpl(this, new LoginFragmentInteractorImpl());
     }
 
@@ -97,6 +100,11 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
     public void onLoginResult(boolean success) {
         Toast.makeText(Contextor.getInstance().getContext(), "Result: " + success, Toast.LENGTH_SHORT)
                 .show();
+
+        if (success) {
+            Intent intent = new Intent(getActivity(), MainListActivity.class);
+            startActivity(intent);
+        }
     }
 
 }
