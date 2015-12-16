@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
+import retrofit.RxJavaCallAdapterFactory;
 
 /**
  * Created by nuuneoi on 11/16/2014.
@@ -31,6 +32,7 @@ public class HTTPManager {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://nuuneoi.com/courses/dessert_maker/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
 
         mService = retrofit.create(APIService.class);

@@ -5,7 +5,7 @@ package com.inthecheesefactory.lab.mvpstructure.fragment.login.view;
  */
 public interface ILoginFragmentView {
 
-    public void onClearText();
-    public void onLoginResult(boolean success);
+    void onClearText();
+    void onLoginResult(boolean success);
 
 }

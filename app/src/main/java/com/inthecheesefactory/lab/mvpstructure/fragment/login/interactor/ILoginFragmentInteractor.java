@@ -5,6 +5,6 @@ package com.inthecheesefactory.lab.mvpstructure.fragment.login.interactor;
  */
 public interface ILoginFragmentInteractor {
 
-    public void login(String username, String password, OnLoginFragmentInteractorListener listener);
+    void login(String username, String password, OnLoginFragmentInteractorListener listener);
 
 }

@@ -5,6 +5,6 @@ package com.inthecheesefactory.lab.mvpstructure.fragment.login.interactor;
  */
 public interface OnLoginFragmentInteractorListener {
 
-    public void onLoginResult(boolean success);
+    void onLoginResult(boolean success);
 
 }
