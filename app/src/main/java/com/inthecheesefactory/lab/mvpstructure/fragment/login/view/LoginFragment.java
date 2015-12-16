@@ -17,10 +17,13 @@ import com.inthecheesefactory.lab.mvpstructure.fragment.login.interactor.LoginFr
 import com.inthecheesefactory.lab.mvpstructure.fragment.login.presenter.ILoginFragmentPresenter;
 import com.inthecheesefactory.lab.mvpstructure.fragment.login.presenter.LoginFragmentPresenterImpl;
 import com.inthecheesefactory.lab.mvpstructure.manager.Contextor;
+import com.jakewharton.rxbinding.widget.RxTextView;
+import com.jakewharton.rxbinding.widget.TextViewAfterTextChangeEvent;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Observable;
 
 /**
  * Created by nuuneoi on 12/15/2015.
@@ -57,6 +60,14 @@ public class LoginFragment extends Fragment implements ILoginFragmentView {
         ButterKnife.bind(this, rootView);
 
         presenter = new LoginFragmentPresenterImpl(this, new LoginFragmentInteractorImpl());
+
+        Observable<Boolean> usernameValid = RxTextView.afterTextChangeEvents(editTextUsername)
+                .map(e -> e.view().getText().length() > 3 ? true : false);
+        Observable<Boolean> passwordValid = RxTextView.afterTextChangeEvents(editTextPassword)
+                .map(e -> e.view().getText().length() > 3 ? true : false);
+
+        Observable<Boolean> loginEnabled = Observable.combineLatest(usernameValid, passwordValid, (a, b) -> a && b);
+        loginEnabled.subscribe(b -> btnLogin.setEnabled(b));
     }
 
     @Override
